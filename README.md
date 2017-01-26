@@ -37,7 +37,7 @@ git clone https://github.com/gher-ulg/divand.py
 
 ## Testing
 
-You are advised to try one one of these examples in the directory `examples`:
+You are advised to try one of these examples in the directory `examples`:
 
 * `divand_argo.py`
 * `divand_small.py`
