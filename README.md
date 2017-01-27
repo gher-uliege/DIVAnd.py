@@ -39,8 +39,8 @@ git clone https://github.com/gher-ulg/divand.py
 
 You are advised to try one of these examples in the directory `examples`:
 
-* `divand_argo.py`
-* `divand_small.py`
+* [divand_argo.py](https://github.com/gher-ulg/divand.py/blob/master/examples/divand_argo.py)
+* [divand_small.py](https://github.com/gher-ulg/divand.py/blob/master/examples/divand_small.py)
 
 The environment variable `PYTHONPATH` should contain the directory with the file `divand.py`.
 
