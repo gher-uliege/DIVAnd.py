@@ -1,10 +1,10 @@
 # divand.py
-`divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface)
+`divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).
 
 
 ## Installation
 
-Besides python and numpy you need:
+Besides Python and [NumPy](http://www.numpy.org/) you need to:
 
 * Install [Julia](http://julialang.org/downloads/)
 * Install the Julia package `PyCall`
@@ -21,7 +21,7 @@ Pkg.clone("https://github.com/gher-ulg/divand.jl")
 
 * Install python package [pyjulia](https://github.com/JuliaPy/pyjulia)
 
-`divand.py` is tested with python 2.7 but should also work with python 3 once `pyjulia` is installed properly.
+`divand.py` is tested with Python 2.7 but should also work with Python 3 once `pyjulia` is installed properly.
 
 ```bash
 git clone https://github.com/JuliaPy/pyjulia
