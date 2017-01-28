@@ -12,10 +12,10 @@ b = nc.variables["bat"][:,:]
 lon = nc.variables["lon"][:]
 lat = nc.variables["lat"][:]
 
-Lon,Lat = np.meshgrid(lon,lat)
+Lon, Lat = np.meshgrid(lon,lat)
 mask = b < 0
 
-pm,pn = metric(Lon,Lat)
+pm, pn = metric(Lon,Lat)
 
 # data file
 A = np.loadtxt("temperature_argo.txt")
@@ -32,7 +32,7 @@ vmean = np.mean(vobs[:])
 vanom = vobs - vmean
 
 # make the analysis
-va,s = divand(mask,(pm,pn),(Lon,Lat),(xobs,yobs),vobs,(lenx,leny),sdn);
+va, s = divand(mask, (pm, pn), (Lon, Lat), (xobs, yobs), vobs, (lenx, leny), sdn);
 
 v = va + vmean
 plt.pcolor(Lon,Lat,v); plt.colorbar()
