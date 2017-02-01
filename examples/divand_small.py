@@ -19,8 +19,8 @@ v = np.sin(x*6) * np.cos(y*6)
 lenx = .15;
 leny = .15;
 
-sdn = 20;
+epsilon2 = 0.05;
 
-va,s = divand(np.transpose(mask),(pm,pn),(xi,yi),(x,y),v,(lenx,leny),sdn);
+va,s = divand(np.transpose(mask),(pm,pn),(xi,yi),(x,y),v,(lenx,leny),epsilon2);
 
 print "va",va

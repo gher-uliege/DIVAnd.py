@@ -25,14 +25,14 @@ yobs = A[:,1];
 vobs = A[:,2];
 lenx = 800e3; # in meters
 leny = 800e3; # in meters
-sdn = 1.
+epsilon2 = 1.
 
 # compute anomalies
 vmean = np.mean(vobs[:])
 vanom = vobs - vmean
 
 # make the analysis
-va, s = divand(mask, (pm, pn), (Lon, Lat), (xobs, yobs), vobs, (lenx, leny), sdn);
+va, s = divand(mask, (pm, pn), (Lon, Lat), (xobs, yobs), vobs, (lenx, leny), epsilon2);
 
 v = va + vmean
 plt.pcolor(Lon,Lat,v); plt.colorbar()
