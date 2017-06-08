@@ -1,5 +1,6 @@
 # divand.py
-`divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).
+`divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).<br>
+This package is a python interface to `divand`, written in Julia.
 
 
 ## Installation
