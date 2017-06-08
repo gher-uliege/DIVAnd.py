@@ -1,3 +1,4 @@
+from __future__ import print_function
 import numpy as np
 import julia
 from divand import divand, metric
@@ -21,6 +22,6 @@ leny = .15;
 
 epsilon2 = 0.05;
 
-va,s = divand(np.transpose(mask),(pm,pn),(xi,yi),(x,y),v,(lenx,leny),epsilon2);
+va,s = divand(mask,(pm,pn),(xi,yi),(x,y),v,(lenx,leny),epsilon2);
 
-print "va",va
+print("va",va)
