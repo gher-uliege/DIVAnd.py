@@ -1,0 +1,25 @@
+language: python
+matrix:
+  include:
+      - language: python
+        python: 2.7
+        env: JULIA_VERSION=juliareleases
+notifications:
+  email: false
+before_script:
+  - echo ./ci/install-julia.sh "$JULIA_VERSION"
+  - ./ci/install-julia.sh "$JULIA_VERSION"
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get update -qq -y; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libpcre3-dev -y; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install python-numpy python3-numpy -y; fi
+  - pip install -U pytest
+  - julia -e 'Pkg.add("PyCall")'
+  - julia -e 'Pkg.checkout("PyCall"); Pkg.build("PyCall")'
+  - julia -e 'Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
+  - julia -e 'Pkg.clone("https://github.com/gher-ulg/divand.py.git");'
+  - git clone https://github.com/JuliaPy/pyjulia
+  - cd pyjulia; sudo python setup.py install
+script:
+  - /usr/bin/python --version
+  - python --version
+  - pytest
