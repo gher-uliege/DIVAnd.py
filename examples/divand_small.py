@@ -12,8 +12,8 @@ epsilon = 1e-10
 
 x, y = np.meshgrid(np.linspace(epsilon, 1-epsilon, 3),
                    np.linspace(epsilon, 1-epsilon, 3))
-x = x[:]
-y = y[:]
+x = x.flatten()
+y = y.flatten()
 v = np.sin(x*6) * np.cos(y*6)
 
 lenx = .15
@@ -21,6 +21,7 @@ leny = .15
 
 epsilon2 = 0.05
 
-va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+#va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+va = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
 
 print("va", va)
