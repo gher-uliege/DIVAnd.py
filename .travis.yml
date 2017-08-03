@@ -22,4 +22,4 @@ before_script:
 script:
   - /usr/bin/python --version
   - python --version
-  - export PYTHONPATH="$PWD/src:$PYTHONPATH"; python pytest
+  - export PYTHONPATH="$PWD/src:$PYTHONPATH"; python $(which pytest)
