@@ -6,7 +6,6 @@ j = julia.Julia()
 #j.eval('push!(LOAD_PATH, joinpath(ENV["HOME"],"projects/Julia/divand.jl/src"))')
 j.using("divand")
 
-
 def divand(mask, pmn, xi, x, f, corlen, epsilon2):
     va = j.divandrunfi(
         np.transpose(mask),
