@@ -6,7 +6,6 @@ def test_metric():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
     pm,pn = metric(xi,yi)
     print('pm',pm)
-    assert 1 == 2
 
 def test_divand():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
@@ -33,4 +32,3 @@ def test_divand():
 
     print("va", va)
     assert va.shape == xi.shape
-    assert 1 == 2
