@@ -38,7 +38,8 @@ case $(uname) in
     fi
     case $(uname -m) in
       x86_64)
-        curl -L "$STATUSURL/linux-x86_64" | tar -xz
+        #curl -L "$STATUSURL/linux-x86_64" | tar -xz
+        curl -L "https://julialang-s3.julialang.org/bin/linux/x64/0.6/julia-0.6.0-linux-x86_64.tar.gz" | tar -xz
         ;;
       i386 | i486 | i586 | i686)
         curl -L "$STATUSURL/linux-i686" | tar -xz
