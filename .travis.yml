@@ -20,6 +20,8 @@ before_script:
   - git clone https://github.com/JuliaPy/pyjulia
   - (cd pyjulia; python setup.py install)
 script:
+  - which python
+  - which pip
   - /usr/bin/python --version
   - python --version
   - export PYTHONPATH="$PWD/src:$PYTHONPATH"; python $(which pytest)
