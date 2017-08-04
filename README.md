@@ -48,17 +48,17 @@ The environment variable `PYTHONPATH` should contain the directory with the file
 You can set this variable for the current shell and then run the example:
 
 ```bash
-export PYTHONPATH="$HOME/src/divand.py/src:$PYTHONPATH"
+export PYTHONPATH="$HOME/src/divand.py/divand:$PYTHONPATH"
 python divand_argo.py
 ```
 
 or just for a single call of the python script (the following command should be on one line):
 
 ```bash
-PYTHONPATH="$HOME/src/divand.py/src:$PYTHONPATH" python divand_argo.py
+PYTHONPATH="$HOME/src/divand.py/divand:$PYTHONPATH" python divand_argo.py
 ```
 
-Note that you should adapt the path in the previous example to match the installation location of `divand.py`.
+Note that you should adapt the path in the previous example (`$HOME/src/divand.py/divand`) to match the installation location of `divand.py`.
 
 
 ## Toubleshooting
@@ -124,7 +124,7 @@ WARNING: redefining constant JULIA_HOME
 Traceback (most recent call last):
   File "divand_small.py", line 25, in <module>
     va = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
-  File "/home/abarth/src/divand.py/src/divand.py", line 14, in divand
+  File "/home/abarth/src/divand.py/divand/divand.py", line 14, in divand
     x, f, corlen, epsilon2)
 RuntimeError: Julia exception: MethodError(divand.divandrunfi, (Bool[true true true true; true true true true; true true true true], ([2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0], [3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0]), ([0.0 0.0 0.0 0.0; 0.5 0.5 0.5 0.5; 1.0 1.0 1.0 1.0], [0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0]), ([1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0], [1.0e-10 1.0e-10 1.0e-10; 0.5 0.5 0.5; 1.0 1.0 1.0]), [6.0e-10 0.14112 -0.279415; -5.93995e-10 -0.139708 0.276619; 5.76102e-10 0.135499 -0.268286], (0.15, 0.15), 0.05), 0x000000000000553e)
 ```
