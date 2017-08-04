@@ -21,8 +21,6 @@ before_script:
   - (cd pyjulia; python setup.py install)
 script:
   - which python
-  - which pip
-  - /usr/bin/python --version
-  - python --version
-  - julia -e 'using divand'
+#  - julia -e 'using divand'
+# per default pytest uses /usr/bin/python and not the first python interpreter in PATH
   - export PYTHONPATH="$PWD/divand:$PYTHONPATH"; python $(which pytest)

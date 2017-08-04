@@ -1,4 +1,7 @@
 # divand.py
+
+[![Build Status](https://travis-ci.org/gher-ulg/divand.py.svg?branch=master)](https://travis-ci.org/gher-ulg/divand.py)
+
 `divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).<br>
 This package is a python interface to `divand`, written in Julia.
 
