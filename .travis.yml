@@ -24,4 +24,4 @@ script:
   - which pip
   - /usr/bin/python --version
   - python --version
-  - export PYTHONPATH="$PWD/src:$PYTHONPATH"; python $(which pytest)
+  - export PYTHONPATH="$PWD/divand:$PYTHONPATH"; python $(which pytest)
