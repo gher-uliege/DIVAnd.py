@@ -24,4 +24,5 @@ script:
   - which pip
   - /usr/bin/python --version
   - python --version
+  - julia -e 'using divand'
   - export PYTHONPATH="$PWD/divand:$PYTHONPATH"; python $(which pytest)
