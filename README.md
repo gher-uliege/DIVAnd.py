@@ -64,11 +64,11 @@ PYTHONPATH="$HOME/src/divand.py/divand:$PYTHONPATH" python divand_argo.py
 Note that you should adapt the path in the previous example (`$HOME/src/divand.py/divand`) to match the installation location of `divand.py`.
 
 
-## Toubleshooting
+## Troubleshooting
 
 ### Segmentation fault at initialization of pyjulia
 
-On Ubuntu, the default python interpreter (`/usr/bin/python`) produces a segmenentation fault because it is linked statically to libpython2.7.so. As a work-around, use the python interpreter from e.g. Conda after installing the julia package `Conda.jl`. The python interpreter is located at `$HOME/.julia/v0.6/Conda/deps/usr/bin/python2.7`.
+On Ubuntu, the default python interpreter (`/usr/bin/python`) produces a segmentation fault because it is linked statically to libpython2.7.so. As a work-around, use the python interpreter from e.g. Conda after installing the julia package `Conda.jl`. The python interpreter is located at `$HOME/.julia/v0.6/Conda/deps/usr/bin/python2.7`.
 
 ### C++ runtime library error
 
