@@ -132,8 +132,27 @@ Traceback (most recent call last):
 RuntimeError: Julia exception: MethodError(divand.divandrunfi, (Bool[true true true true; true true true true; true true true true], ([2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0], [3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0]), ([0.0 0.0 0.0 0.0; 0.5 0.5 0.5 0.5; 1.0 1.0 1.0 1.0], [0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0]), ([1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0], [1.0e-10 1.0e-10 1.0e-10; 0.5 0.5 0.5; 1.0 1.0 1.0]), [6.0e-10 0.14112 -0.279415; -5.93995e-10 -0.139708 0.276619; 5.76102e-10 0.135499 -0.268286], (0.15, 0.15), 0.05), 0x000000000000553e)
 ```
 
+### Installation of python modules
 
+You may want to use modules such as [`netCDF4`](http://unidata.github.io/netcdf4-python/) or [`matplotlib`](http://matplotlib.org/). Two possibilies are offered, starting in the $HOME/.julia/v0.6/Conda/deps/usr/bin/python2.7 directory: 
+1. Using the `Conda` installation:
+```bash
+conda install numpy
+```
+2. Using `pip` command:
+```bash
+pip install numpy
+```
+The installed packages can be listed using `pip list` or `conda list`.
 
+Note that the modules available through `Conda` are those in one of the following repositories:
+- https://repo.continuum.io/pkgs/free/linux-64
+- https://repo.continuum.io/pkgs/free/noarch
+- https://repo.continuum.io/pkgs/r/linux-64
+- https://repo.continuum.io/pkgs/r/noarch
+- https://repo.continuum.io/pkgs/pro/linux-64
+- https://repo.continuum.io/pkgs/pro/noarch        
+while `pip` provides access to more resources through https://pypi.python.org/pypi.
 
 <!--  LocalWords:  divand py variational PyCall pyjulia cd argo LD
  -->
