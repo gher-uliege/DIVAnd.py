@@ -13,6 +13,7 @@ before_script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install libpcre3-dev -y; fi
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo apt-get install python-numpy python3-numpy -y; fi
   - pip install -U pytest
+  - pip install -U NetCDF4
   - julia -e 'Pkg.add("PyCall")'
   - julia -e 'Pkg.checkout("PyCall"); Pkg.build("PyCall")'
   - julia -e 'Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
