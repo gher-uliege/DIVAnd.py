@@ -134,7 +134,7 @@ RuntimeError: Julia exception: MethodError(divand.divandrunfi, (Bool[true true t
 
 ### Installation of python modules
 
-You may want to use modules such as [`netCDF4`](http://unidata.github.io/netcdf4-python/) or [`matplotlib`](http://matplotlib.org/). Two possibilies are offered, starting in the $HOME/.julia/v0.6/Conda/deps/usr/bin/python2.7 directory: 
+You may want to use modules such as [`netCDF4`](http://unidata.github.io/netcdf4-python/) or [`matplotlib`](http://matplotlib.org/). Two possibilies are offered, starting in the $HOME/.julia/v0.6/Conda/deps/usr/bin/python2.7 directory:
 1. Using the `Conda` installation:
 ```bash
 conda install numpy
@@ -151,8 +151,13 @@ Note that the modules available through `Conda` are those in one of the followin
 - https://repo.continuum.io/pkgs/r/linux-64
 - https://repo.continuum.io/pkgs/r/noarch
 - https://repo.continuum.io/pkgs/pro/linux-64
-- https://repo.continuum.io/pkgs/pro/noarch        
+- https://repo.continuum.io/pkgs/pro/noarch
 while `pip` provides access to more resources through https://pypi.python.org/pypi.
+
+
+### Python 3
+
+See docs/python3.md
 
 <!--  LocalWords:  divand py variational PyCall pyjulia cd argo LD
  -->
