@@ -157,7 +157,7 @@ while `pip` provides access to more resources through https://pypi.python.org/py
 
 ### Python 3
 
-See docs/python3.md
+See [python3](docs/python3.md).
 
 <!--  LocalWords:  divand py variational PyCall pyjulia cd argo LD
  -->

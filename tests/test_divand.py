@@ -2,10 +2,12 @@ from __future__ import print_function
 import numpy as np
 from divand import divand, metric
 
+
 def test_metric():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
-    pm,pn = metric(xi,yi)
-    print('pm',pm)
+    pm, pn = metric(xi, yi)
+    print('pm', pm)
+
 
 def test_divand():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
@@ -27,7 +29,7 @@ def test_divand():
 
     epsilon2 = 0.05
 
-    #va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+    # va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
     va = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
 
     print("va", va)
