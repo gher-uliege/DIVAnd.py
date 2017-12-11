@@ -1,7 +1,7 @@
 # Python 3
 
-On Ubuntu, the default python interpreter (`/usr/bin/python3`) produces a segmentation fault because it is linked statically to libpython3.x.so. As a work-around, one can use the python interpreter from e.g.  miniconda available from https://conda.io/miniconda.html
-In the following, miniconda is installed in `/home/abarth/opt/miniconda2` and a conda environement `mytest` is created.
+On Ubuntu, the default python interpreter (`/usr/bin/python3`) produces a segmentation fault because it is linked statically to `libpython3.x.so`. As a work-around, one can use the python interpreter from e.g.  miniconda available from https://conda.io/miniconda.html.
+In the following, miniconda is installed in `/home/abarth/opt/miniconda2` and a conda environment `mytest` is created.
 
 ```bash
 export PATH="/home/abarth/opt/miniconda2/bin/:$PATH"
@@ -10,7 +10,7 @@ conda create --name mytest python=3
 source activate mytest
 ```
 
-The command `which python3` should return somthing like `/home/abarth/opt/miniconda2/envs/mytest/bin/python3`.
+The command `which python3` should return something like `/home/abarth/opt/miniconda2/envs/mytest/bin/python3`.
 
 * Install the dependencies
 
@@ -63,4 +63,11 @@ tests/test_divand.py ..
 tests/test_divand_run.py ..
 
 ============================ 4 passed in 49.99 seconds ============================
+```
+
+* Create a kernel for jupyter: install [`ipykernel`](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) and create the new kernel: 
+
+```bash
+conda install ipykernel
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
 ```
