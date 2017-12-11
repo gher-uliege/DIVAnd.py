@@ -21,7 +21,7 @@ leny = .15
 
 epsilon2 = 0.05
 
-# va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+#va, s = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
 va = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
 
 print("va", va)
