@@ -2,14 +2,11 @@ language: python
 matrix:
   include:
       - language: python
-        python: 2.7
-        env: JULIA_VERSION=juliareleases
-      - language: python
         python: 3.5
-        env: JULIA_VERSION=juliareleases
+        env: JULIA_VERSION=1.0
       - language: python
         python: 3.6
-        env: JULIA_VERSION=juliareleases
+        env: JULIA_VERSION=1.0
 notifications:
   email: false
 before_script:
@@ -21,15 +18,14 @@ before_script:
   - pip --version
   - pip install -U pytest
   - pip install -U NetCDF4
-  - julia -e 'Pkg.add("PyCall")'
-  - julia -e 'Pkg.checkout("PyCall"); Pkg.build("PyCall")'
-  - julia -e 'Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
-  - julia -e 'Pkg.clone("https://github.com/gher-ulg/divand.jl.git");'
-  - git clone https://github.com/JuliaPy/pyjulia
-  - (cd pyjulia; python setup.py install)
+  - pip install -U julia
+  - julia -e 'import Pkg; Pkg.add("PyCall")'
+#  - julia -e 'import Pkg; Pkg.checkout("PyCall"); Pkg.build("PyCall")'
+#  - julia -e 'import Pkg; Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
+  - julia -e 'import Pkg; Pkg.add("https://github.com/gher-ulg/DIVAnd.jl.git");'
 script:
   - which python
   - python --version
-#  - julia -e 'using divand'
+#  - julia -e 'using DIVAnd'
 # per default pytest uses /usr/bin/python and not the first python interpreter in PATH
-  - export PYTHONPATH="$PWD/divand:$PYTHONPATH"; python $(which pytest)
+  - export PYTHONPATH="$PWD/DIVAnd:$PYTHONPATH"; python $(which pytest)

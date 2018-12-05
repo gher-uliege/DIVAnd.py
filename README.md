@@ -1,9 +1,9 @@
-# divand.py
+# DIVAnd.py
 
-[![Build Status](https://travis-ci.org/gher-ulg/divand.py.svg?branch=master)](https://travis-ci.org/gher-ulg/divand.py)
+[![Build Status](https://travis-ci.org/gher-ulg/DIVAnd.py.svg?branch=master)](https://travis-ci.org/gher-ulg/DIVAnd.py)
 
-`divand` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).<br>
-This package is a python interface to `divand`, written in Julia.
+`DIVAnd` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).<br>
+This package is a python interface to `DIVAnd`, written in Julia.
 
 
 ## Installation
@@ -11,57 +11,46 @@ This package is a python interface to `divand`, written in Julia.
 Besides Python and [NumPy](http://www.numpy.org/) you need to:
 
 * Install [Julia](http://julialang.org/downloads/)
-* Install the Julia package `PyCall`
+* Python's `julia` package by following closely the instructions at https://github.com/JuliaPy/pyjulia
 
-```julia
-Pkg.add("PyCall")
+
+Test the integration of Julia and Python by running the following code in python's shell (`python` or `python-jl` in Ubuntu/Debian):
+
+```
+from julia.Base import banner; banner()
 ```
 
-* Install the Julia package `divand`
-
-```julia
-Pkg.clone("https://github.com/gher-ulg/divand.jl")
-```
-
-* Install python package [pyjulia](https://github.com/JuliaPy/pyjulia)
-
-`divand.py` is tested with Python 2.7 but should also work with Python 3 once `pyjulia` is installed properly.
-
-```bash
-git clone https://github.com/JuliaPy/pyjulia
-cd pyjulia/
-python setup.py install
-```
+If this does not work, have a look again at https://github.com/JuliaPy/pyjulia and file an issue at pyjulia if you belief you found an issue in pyjulia.
 
 * Clone this package
 
 ```bash
-git clone https://github.com/gher-ulg/divand.py
+git clone https://github.com/gher-ulg/DIVAnd.py
 ```
 
 ## Testing
 
 You are advised to try one of these examples in the directory `examples`:
 
-* [divand_argo.py](https://github.com/gher-ulg/divand.py/blob/master/examples/divand_argo.py)
-* [divand_small.py](https://github.com/gher-ulg/divand.py/blob/master/examples/divand_small.py)
+* [DIVAnd_argo.py](https://github.com/gher-ulg/DIVAnd.py/blob/master/examples/DIVAnd_argo.py)
+* [DIVAnd_small.py](https://github.com/gher-ulg/DIVAnd.py/blob/master/examples/DIVAnd_small.py)
 
-The environment variable `PYTHONPATH` should contain the directory with the file `divand.py`.
+The environment variable `PYTHONPATH` should contain the directory with the file `DIVAnd.py`.
 
 You can set this variable for the current shell and then run the example:
 
 ```bash
-export PYTHONPATH="$HOME/src/divand.py/divand:$PYTHONPATH"
-python divand_argo.py
+export PYTHONPATH="$HOME/src/DIVAnd.py/DIVAnd:$PYTHONPATH"
+python DIVAnd_argo.py
 ```
 
 or just for a single call of the python script (the following command should be on one line):
 
 ```bash
-PYTHONPATH="$HOME/src/divand.py/divand:$PYTHONPATH" python divand_argo.py
+PYTHONPATH="$HOME/src/DIVAnd.py/DIVAnd:$PYTHONPATH" python DIVAnd_argo.py
 ```
 
-Note that you should adapt the path in the previous example (`$HOME/src/divand.py/divand`) to match the installation location of `divand.py`.
+Note that you should adapt the path in the previous example (`$HOME/src/DIVAnd.py/DIVAnd`) to match the installation location of `DIVAnd.py`.
 
 
 ## Troubleshooting
@@ -125,11 +114,11 @@ If you optain the following error by running one of the examples, consider to up
 ```
 WARNING: redefining constant JULIA_HOME
 Traceback (most recent call last):
-  File "divand_small.py", line 25, in <module>
-    va = divand(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
-  File "/home/abarth/src/divand.py/divand/divand.py", line 14, in divand
+  File "DIVAnd_small.py", line 25, in <module>
+    va = DIVAnd(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+  File "/home/abarth/src/DIVAnd.py/DIVAnd/DIVAnd.py", line 14, in DIVAnd
     x, f, corlen, epsilon2)
-RuntimeError: Julia exception: MethodError(divand.divandrunfi, (Bool[true true true true; true true true true; true true true true], ([2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0], [3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0]), ([0.0 0.0 0.0 0.0; 0.5 0.5 0.5 0.5; 1.0 1.0 1.0 1.0], [0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0]), ([1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0], [1.0e-10 1.0e-10 1.0e-10; 0.5 0.5 0.5; 1.0 1.0 1.0]), [6.0e-10 0.14112 -0.279415; -5.93995e-10 -0.139708 0.276619; 5.76102e-10 0.135499 -0.268286], (0.15, 0.15), 0.05), 0x000000000000553e)
+RuntimeError: Julia exception: MethodError(DIVAnd.DIVAndrunfi, (Bool[true true true true; true true true true; true true true true], ([2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0; 2.0 2.0 2.0 2.0], [3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0; 3.0 3.0 3.0 3.0]), ([0.0 0.0 0.0 0.0; 0.5 0.5 0.5 0.5; 1.0 1.0 1.0 1.0], [0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0; 0.0 0.333333 0.666667 1.0]), ([1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0; 1.0e-10 0.5 1.0], [1.0e-10 1.0e-10 1.0e-10; 0.5 0.5 0.5; 1.0 1.0 1.0]), [6.0e-10 0.14112 -0.279415; -5.93995e-10 -0.139708 0.276619; 5.76102e-10 0.135499 -0.268286], (0.15, 0.15), 0.05), 0x000000000000553e)
 ```
 
 ### Installation of python modules
@@ -159,7 +148,7 @@ while `pip` provides access to more resources through https://pypi.python.org/py
 
 See docs/python3.md
 
-<!--  LocalWords:  divand py variational PyCall pyjulia cd argo LD
+<!--  LocalWords:  DIVAnd py variational PyCall pyjulia cd argo LD
  -->
 <!--  LocalWords:  PYTHONPATH PRELOAD runtime
  -->
