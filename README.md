@@ -5,7 +5,7 @@
 `DIVAnd` performs an n-dimensional variational analysis of arbitrarily located observations (python interface).<br>
 This package is a python interface to `DIVAnd`, written in Julia.
 
-The primary use case of divand.py is to build web service and therefore the only OS supported by divand.py is Linux. 
+The primary use case of DIVAnd.py is to build web service and therefore the only OS supported by DIVAnd.py is Linux.
 
 ## Installation
 
