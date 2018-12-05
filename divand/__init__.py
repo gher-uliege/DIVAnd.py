@@ -1,3 +1,3 @@
 
-# make all function from divand.py available
-from divand import *
+# make all function from DIVAnd.py available
+from DIVAnd import *

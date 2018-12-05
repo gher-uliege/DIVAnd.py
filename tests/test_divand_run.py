@@ -3,7 +3,7 @@ import shutil
 import unittest
 import netCDF4
 import numpy as np
-from divand import divand, metric
+from DIVAnd import DIVAnd, metric
 
 print("Running Divand tests")
 print(" ")
@@ -37,7 +37,7 @@ class TestDivand(unittest.TestCase):
         self.assertEqual(self.pn[-1, 0], self.pn[-1, 1])
         """
 
-    def test_divandcalc(self):
+    def test_DIVAndcalc(self):
         """
         Test the interpolation on a simple case
         """
@@ -54,7 +54,7 @@ class TestDivand(unittest.TestCase):
         leny = .15
         epsilon2 = 0.05
 
-        va = divand(self.mask, (pm, pn), (self.xi, self.yi), (x, y), v, (lenx, leny), epsilon2)
+        va = DIVAnd(self.mask, (pm, pn), (self.xi, self.yi), (x, y), v, (lenx, leny), epsilon2)
 
         self.assertEqual(va.shape, (4, 3))
         self.assertAlmostEqual(va[2, 1], -1.91700011637e-10)
