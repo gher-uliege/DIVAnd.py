@@ -26,6 +26,8 @@ before_script:
 script:
   - which python
   - python --version
+  - pwd
+  - ls
 #  - julia -e 'using DIVAnd'
 # per default pytest uses /usr/bin/python and not the first python interpreter in PATH
   - export PYTHONPATH="$PWD/DIVAnd:$PYTHONPATH"; python $(which pytest)
