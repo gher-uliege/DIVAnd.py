@@ -22,7 +22,7 @@ before_script:
   - julia -e 'import Pkg; Pkg.add("PyCall")'
 #  - julia -e 'import Pkg; Pkg.checkout("PyCall"); Pkg.build("PyCall")'
 #  - julia -e 'import Pkg; Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
-  - julia -e 'import Pkg; Pkg.develop("https://github.com/gher-ulg/DIVAnd.jl.git");'
+  - julia -e 'import Pkg; Pkg.add(PackageSpec(url="https://github.com/gher-ulg/DIVAnd.jl"))'
 script:
   - which python
   - python --version
