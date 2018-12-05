@@ -19,10 +19,10 @@ before_script:
   - pip install -U pytest
   - pip install -U NetCDF4
   - pip install -U julia
-  - julia -e 'import Pkg; Pkg.add("PyCall")'
-#  - julia -e 'import Pkg; Pkg.checkout("PyCall"); Pkg.build("PyCall")'
-#  - julia -e 'import Pkg; Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
-  - julia -e 'import Pkg; Pkg.add(PackageSpec(url="https://github.com/gher-ulg/DIVAnd.jl"))'
+  - julia -e 'using Pkg; Pkg.add("PyCall")'
+#  - julia -e 'using Pkg; Pkg.checkout("PyCall"); Pkg.build("PyCall")'
+#  - julia -e 'using Pkg; Pkg.init(); run(`ln -s $(pwd()) $(Pkg.dir())/PyCall`); Pkg.resolve()'
+  - julia -e 'using Pkg; Pkg.add(PackageSpec(url="https://github.com/gher-ulg/DIVAnd.jl"))'
 script:
   - which python
   - python --version
