@@ -2,10 +2,12 @@ from __future__ import print_function
 import numpy as np
 from DIVAnd import DIVAnd, metric
 
+
 def test_metric():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
-    pm,pn = metric(xi,yi)
-    print('pm',pm)
+    pm, pn = metric(xi, yi)
+    print('pm', pm)
+
 
 def test_DIVAnd():
     xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
