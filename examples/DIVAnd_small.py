@@ -1,6 +1,6 @@
 from __future__ import print_function
 import numpy as np
-from DIVAnd import divand, metric
+import DIVAnd
 
 xi, yi = np.meshgrid([0.0, 0.5, 1.0], [0.0, 0.333333, 0.666667, 1.0])
 
@@ -22,6 +22,6 @@ leny = .15
 epsilon2 = 0.05
 
 #va, s = DIVAnd(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
-va = DIVAnd(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
+va = DIVAnd.DIVAnd(mask, (pm, pn), (xi, yi), (x, y), v, (lenx, leny), epsilon2)
 
 print("va", va)

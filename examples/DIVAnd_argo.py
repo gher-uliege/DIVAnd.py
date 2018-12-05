@@ -1,7 +1,7 @@
 import numpy as np
 import netCDF4
 import matplotlib.pyplot as plt
-from DIVAnd import divand, metric
+import DIVAnd
 
 # bathymetry
 fname = "diva_bath.nc"
@@ -15,7 +15,7 @@ lat = nc.variables["lat"][:]
 Lon, Lat = np.meshgrid(lon, lat)
 mask = b < 0
 
-pm, pn = metric(Lon, Lat)
+pm, pn = DIVAnd.metric(Lon, Lat)
 
 # data file
 A = np.loadtxt("temperature_argo.txt")
@@ -32,7 +32,7 @@ vmean = np.mean(vobs[:])
 vanom = vobs - vmean
 
 # make the analysis
-va, s = DIVAnd(mask, (pm, pn), (Lon, Lat), (xobs, yobs), vobs, (lenx, leny), epsilon2)
+va = DIVAnd.DIVAnd(mask, (pm, pn), (Lon, Lat), (xobs, yobs), vobs, (lenx, leny), epsilon2)
 
 v = va + vmean
 plt.pcolor(Lon, Lat, v)
