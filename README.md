@@ -144,6 +144,16 @@ Note that the modules available through `Conda` are those in one of the followin
 - https://repo.continuum.io/pkgs/pro/noarch
 while `pip` provides access to more resources through https://pypi.python.org/pypi.
 
+### Order of the dimensions
+
+The default order of dimension in python is reversed relative to Julia ([Row- vs column-major order](https://en.wikipedia.org/wiki/Row-_and_column-major_order)). For example a 3D analysis `mask`, `po`, `pn`, `pm`, `zi`, `yi`, `xi` are 3D arrays with the dimensions corresponding to `depth`, `latitude` and `time`:
+
+```python
+va2 = DIVAnd.DIVAnd(mask,(po,pn,pm),(zi,yi,xi),(z,y,x),f,lenx,epsilon2)
+```
+
+This is also the order of dimensions produced by e.g. python's netCDF4 for CF compliant files.
+
 
 ### Python 3
 
